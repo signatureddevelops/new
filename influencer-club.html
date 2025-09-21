@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Signature D — Influencer Access Club</title>
+  <meta name="description" content="Influencer Access Club — curated brand deals, paid campaigns, concierge support." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self';
+                 img-src 'self' https: data:;
+                 style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+                 font-src https://fonts.gstatic.com;
+                 script-src 'self';
+                 frame-src https:;">
+  <style>
+    :root{--emerald:#0e3f3f;--emeraldDeep:#092c2c;--gold:#f5c046;--goldBright:#ffd978;--ink:#0a0d10;--silver:#e6eaef}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--ink);color:var(--silver);font-family:Inter,system-ui,sans-serif}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;z-index:50;background:rgba(10,13,16,.7);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid rgba(230,234,239,.08)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--emeraldDeep),var(--emerald))}
+    h1{font-family:"Playfair Display",serif;font-size:22px;margin:0}
+    .btn{display:inline-block;padding:12px 18px;border-radius:14px;border:1px solid rgba(230,234,239,.14);transition:transform .2s ease,box-shadow .2s ease}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.35)}
+    .btn.gold{background:linear-gradient(135deg,var(--gold),var(--goldBright));color:#181a1e;border-color:rgba(0,0,0,.15)}
+    .hero{position:relative;overflow:hidden}
+    .heroBg{position:absolute;inset:0;background:
+      radial-gradient(1000px 600px at 70% -10%, rgba(14,63,63,.45), transparent),
+      radial-gradient(900px 500px at -10% 20%, rgba(9,44,44,.6), transparent),
+      linear-gradient(180deg, rgba(10,13,16,1) 0%, rgba(10,13,16,0.4) 60%, rgba(10,13,16,1) 100%)}
+    .starfield{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(#ffffff 1px, rgba(255,255,255,0) 2px);background-size:3px 3px;opacity:.10;animation:twinkle 7s linear infinite}
+    @keyframes twinkle{0%{opacity:.06}50%{opacity:.12}100%{opacity:.06}}
+    .heroInner{position:relative;padding:84px 24px 44px}
+    .kicker{letter-spacing:.22em;text-transform:uppercase;color:#cfe1de;font-size:12px;margin-bottom:10px}
+    .hero h2{font-family:"Playfair Display",serif;font-size:42px;margin:0 0 8px}
+    .section{padding:48px 24px;border-top:1px solid rgba(230,234,239,.08)}
+    .grid{display:grid;gap:16px}
+    .cols-3{grid-template-columns:1fr}
+    @media(min-width:980px){.cols-3{grid-template-columns:repeat(3,1fr)}}
+    .card{border:1px solid rgba(230,234,239,.12);border-radius:18px;padding:20px;background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0))}
+    .price{color:var(--gold);font-weight:700;margin:6px 0 0}
+    footer{padding:34px 24px;border-top:1px solid rgba(230,234,239,.08)}
+    .fine{opacity:.78}
+    /* Gate */
+    .gate{position:fixed;inset:0;background:rgba(10,13,16,.84);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;z-index:100}
+    .gateCard{width:min(560px,92%);border-radius:20px;border:1px solid rgba(230,234,239,.14);background:linear-gradient(145deg, rgba(14,63,63,.35), rgba(10,13,16,.9));padding:26px;box-shadow:0 22px 50px rgba(0,0,0,.5)}
+    .row{display:flex;gap:10px;margin-top:10px}
+    input[type="password"]{flex:1;padding:12px 14px;border-radius:12px;border:1px solid rgba(230,234,239,.18);background:rgba(255,255,255,.06);color:var(--silver)}
+    .err{color:#ffd0d0;font-size:13px;display:none;margin-top:6px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+      <div class="brand"><div class="logo" aria-hidden="true"></div><h1>Signature D.</h1></div>
+      <a class="btn" href="index.html">Back to Home</a>
+    </div>
+  </header>
+
+  <section class="hero" aria-label="Hero">
+    <div class="heroBg"></div><div class="starfield"></div>
+    <div class="heroInner container">
+      <div class="kicker">Invite Only</div>
+      <h2>Influencer Access Club</h2>
+      <p class="fine">Brands are brought to you. We curate high-fit collaborations and paid campaigns — you focus on creating.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h3 style="font-family:'Playfair Display',serif;margin:0 0 14px">Tiers</h3>
+      <div class="grid cols-3">
+        <div class="card">
+          <h4>Entry-Tier</h4>
+          <div class="price">$500/mo</div>
+          <ul>
+            <li>1–2 guaranteed brand connections/mo</li>
+            <li>Spotlight in curated decks</li>
+            <li>Priority channel</li>
+          </ul>
+          <a class="btn" href="#apply">Apply</a>
+        </div>
+        <div class="card">
+          <h4>Mid-Tier</h4>
+          <div class="price">$1,000/mo</div>
+          <ul>
+            <li>2–3 guaranteed brand connections/mo</li>
+            <li>Paid campaign placements & cross-promotions</li>
+            <li>Spotlight in decks & reels</li>
+          </ul>
+          <a class="btn" href="#apply">Apply</a>
+        </div>
+        <div class="card">
+          <h4>Top-Tier</h4>
+          <div class="price">$2,000+/mo</div>
+          <ul>
+            <li>3–5 high-value deals/mo</li>
+            <li>Ambassador program opportunities</li>
+            <li>Concierge support & negotiation guidance</li>
+          </ul>
+          <a class="btn" href="#apply">Apply</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="apply" class="section">
+    <div class="container">
+      <h3 style="font-family:'Playfair Display',serif;margin:0 0 14px">Apply to the Club</h3>
+      <p class="fine">Please complete the form below. Approvals are limited.</p>
+      <!-- Replace with your Google Form URL -->
+      <iframe src="" width="100%" height="760" frameborder="0" marginheight="0" marginwidth="0"
+              loading="lazy"
+              style="border-radius:14px;border:1px solid rgba(230,234,239,.12);background:rgba(255,255,255,.02)"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center">
+      <div>© <span id="yr"></span> DeVirn Signature House, Inc.</div>
+      <div class="fine">We don’t chase attention — we own it.</div>
+    </div>
+  </footer>
+
+  <!-- Soft Gate -->
+  <div class="gate" id="gate" aria-modal="true" role="dialog">
+    <div class="gateCard">
+      <h3>Influencer Access</h3>
+      <p class="fine">Enter your access code to view this page.</p>
+      <div class="row">
+        <input type="password" id="code" placeholder="Access code" aria-label="Access code" />
+        <button class="btn gold" id="enter" type="button">Enter</button>
+      </div>
+      <div class="err" id="err">Incorrect code. Please try again.</div>
+      <p class="fine" style="margin-top:12px">No code? <a href="mailto:narinedevirn@gmail.com">Request access</a>.</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent=new Date().getFullYear();
+    const gate=document.getElementById('gate'); const input=document.getElementById('code'); const err=document.getElementById('err');
+    const check=()=>{ const pass=(input.value||'').trim().toUpperCase(); if(pass==='ORLANDO'){ gate.style.display='none'; sessionStorage.setItem('sd_influencer_gate','ok'); } else { err.style.display='block'; } };
+    document.getElementById('enter').addEventListener('click',check);
+    input.addEventListener('keydown',e=>{ if(e.key==='Enter') check(); });
+    if(sessionStorage.getItem('sd_influencer_gate')==='ok'){ gate.style.display='none'; }
+  </script>
+</body>
+</html>
