@@ -17,7 +17,12 @@
   <meta name="theme-color" content="#0e3f3f" />
 
   <style>
-    /* keep your original CSS here */
+    /* Keep your original CSS styles here */
+    body { margin:0; font-family:Inter, sans-serif; background:#0a0d10; color:#e6eaef; }
+    nav a { margin:0 8px; text-decoration:none; color:#e6eaef; }
+    .btn { padding:10px 16px; border-radius:10px; background:#f5c046; color:#0a0d10; text-decoration:none; }
+    .package { border:1px solid rgba(230,234,239,.12); border-radius:18px; padding:20px; margin:10px 0; }
+    footer { padding:20px; border-top:1px solid rgba(230,234,239,.12); font-size:14px; }
   </style>
 </head>
 <body>
@@ -25,9 +30,8 @@
 
   <!-- HEADER -->
   <header>
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:20px">
       <div class="brand" aria-label="Signature D brand">
-        <div class="logo" aria-hidden="true"></div>
         <h1>Signature D.</h1>
       </div>
       <nav aria-label="Primary">
@@ -36,7 +40,7 @@
         <a href="#clubs">Clubs</a>
         <a href="private-club.html">Client Club</a>
         <a href="influencer-club.html">Influencer Club</a>
-        <!-- <a href="after-dark.html">After-Dark</a> -->
+        <a href="after-dark.html">After-Dark</a>
         <a href="#partners">Partners</a>
         <a href="#contact">Start</a>
       </nav>
@@ -45,66 +49,77 @@
 
   <main id="main">
     <!-- HERO -->
-    <!-- (keep your hero + confidence card block here) -->
+    <section class="hero" style="padding:60px;text-align:center">
+      <h2>We don’t chase attention — we own it.</h2>
+      <p>Strategy. Cinematic design. Precise execution. Outcomes that feel natural and inevitable.</p>
+      <a class="btn" href="https://cash.app/$YOURCASH/1" target="_blank" rel="noopener noreferrer">$1 Mini Audit</a>
+    </section>
 
     <!-- METHOD -->
-    <!-- (keep your flywheel block here, add picture tag for lazy-load) -->
+    <section id="method" style="padding:40px">
+      <h3>Our Method — The Cohesive Cycle</h3>
+      <p>Audits spark packages. Packages unlock access. Access attracts anchors and influencers. Anchors create gravity. Together, the cycle makes your brand inevitable.</p>
+      <picture>
+        <source srcset="images/signature-cycle@2x.png 2x, images/signature-cycle.png 1x" type="image/png">
+        <img src="images/signature-cycle.png" alt="Signature D Cohesive Cycle" width="1200" height="600" loading="lazy">
+      </picture>
+    </section>
 
     <!-- PACKAGES -->
-    <!-- (keep your package cards, update Visibility card to show “access optional” if you like) -->
+    <section id="packages" style="padding:40px">
+      <h3>Packages</h3>
+      <div class="package">
+        <h4>Visibility — $2,500</h4>
+        <p>Access membership optional (+$240/mo).</p>
+      </div>
+      <div class="package">
+        <h4>Engagement Accelerator — $5,000–$7,500</h4>
+        <p>Includes access membership ($240/mo).</p>
+      </div>
+      <div class="package">
+        <h4>Conversion Builder — $10,000+</h4>
+        <p>Includes access membership ($240/mo).</p>
+      </div>
+    </section>
 
     <!-- CLUBS -->
-    <section id="clubs" class="section">
-      <div class="container">
-        <h3>Private Clubs</h3>
-        <div class="grid cols-3" style="margin-top:12px">
-          <div class="package">
-            <h4>Private Client Club</h4>
-            <div class="price">$240/month • invite-only</div>
-            <ul>
-              <li>Immediate response (priority channel)</li>
-              <li>Insider originality insights (monthly)</li>
-              <li>Guaranteed opportunities & curated intros</li>
-              <li>Ongoing spotlight in Signature D media</li>
-            </ul>
-            <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn" href="private-club.html">Request Invitation</a>
-            </div>
-          </div>
-          <div class="package">
-            <h4>Influencer Access Club</h4>
-            <div class="price">$500–$2,000/month • approval required</div>
-            <ul>
-              <li>2–5 guaranteed brand connections/month</li>
-              <li>Paid campaign placements & cross-promotions</li>
-              <li>Spotlight in decks & reels to brands</li>
-              <li>Concierge support for deals</li>
-            </ul>
-            <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn" href="influencer-club.html">Apply</a>
-            </div>
-          </div>
-          <!-- Optional After-Dark card -->
-          <div class="package">
-            <h4>After-Dark Lounge</h4>
-            <div class="price">Members-only chat</div>
-            <ul>
-              <li>Classy late-night networking</li>
-              <li>Access by passphrase</li>
-            </ul>
-            <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn" href="after-dark.html">Enter Lounge</a>
-            </div>
-          </div>
-        </div>
+    <section id="clubs" style="padding:40px">
+      <h3>Private Clubs</h3>
+      <div class="package">
+        <h4>Private Client Club</h4>
+        <p>$240/month • invite-only</p>
+        <a class="btn" href="private-club.html">Request Invitation</a>
+      </div>
+      <div class="package">
+        <h4>Influencer Access Club</h4>
+        <p>$500–$2,000/month • approval required</p>
+        <a class="btn" href="influencer-club.html">Apply</a>
+      </div>
+      <div class="package">
+        <h4>After-Dark Lounge</h4>
+        <p>Members-only chat</p>
+        <a class="btn" href="after-dark.html">Enter Lounge</a>
       </div>
     </section>
 
     <!-- PARTNERS -->
-    <!-- (keep your partners block here) -->
+    <section id="partners" style="padding:40px">
+      <h3>Founding Partners</h3>
+      <p>Early anchor brands helping shape the Signature D network in Orlando.</p>
+    </section>
 
-    <!-- CONTACT / EMAIL LIST -->
-    <!-- (keep your audit + newsletter blocks here) -->
+    <!-- CONTACT -->
+    <section id="contact" style="padding:40px">
+      <h3>Start in 60 seconds</h3>
+      <div class="package">
+        <h4>$1 Mini Audit</h4>
+        <a class="btn" href="https://cash.app/$YOURCASH/1" target="_blank" rel="noopener noreferrer">Pay $1 via Cash App</a>
+      </div>
+      <div class="package">
+        <h4>Join the List</h4>
+        <iframe src="" width="100%" height="480" loading="lazy" style="border:1px solid #ccc;border-radius:10px"></iframe>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER -->
@@ -114,40 +129,14 @@
       <div class="fine" style="display:flex;gap:14px;flex-wrap:wrap">
         <a href="private-club.html">Client Club</a>
         <a href="influencer-club.html">Influencer Club</a>
-        <!-- <a href="after-dark.html">After-Dark</a> -->
+        <a href="after-dark.html">After-Dark</a>
         <span>We don’t chase attention — we own it.</span>
       </div>
     </div>
   </footer>
 
   <script>
-    (function(){
-      const quotes=[
-        "We don’t chase attention — we own it.",
-        "Not forced. Not fabricated. Inevitable.",
-        "Luxury isn’t loud. It’s undeniable.",
-        "Precision over noise. Presence over hype.",
-        "Make it timeless. Make it inevitable."
-      ];
-      const card=document.getElementById('confidenceCard');
-      const quoteEl=document.getElementById('quote');
-      const shuffleBtn=document.getElementById('shuffleBtn');
-      if(shuffleBtn && quoteEl){
-        const shuffle=()=>{ const next=quotes[Math.floor(Math.random()*quotes.length)];
-          quoteEl.style.opacity=0;
-          setTimeout(()=>{ quoteEl.textContent=next; quoteEl.style.opacity=1; },160);
-        };
-        shuffleBtn.addEventListener('click',shuffle);
-      }
-      if(card){
-        card.addEventListener('mousemove',(e)=>{
-          const r=card.getBoundingClientRect();
-          card.style.setProperty('--mx', ((e.clientX-r.left)/r.width*100)+'%');
-          card.style.setProperty('--my', ((e.clientY-r.top)/r.height*100)+'%');
-        }, {passive:true});
-      }
-      const yr=document.getElementById('yr'); if(yr){ yr.textContent=new Date().getFullYear(); }
-    })();
+    document.getElementById('yr').textContent=new Date().getFullYear();
   </script>
 </body>
 </html>
