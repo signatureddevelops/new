@@ -1,310 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--
-    Signature D — Improved static homepage for GitHub Pages
-    Notes:
-      • Put this file at repo root as `index.html`.
-      • Place images in /images and be sure filenames match below.
-      • Create sibling pages: private-club.html, influencer-club.html, after-dark.html (can add later).
-  -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Signature D — We don’t chase attention — we own it.</title>
-  <meta name="description" content="Signature D fuses strategy, cinematic design, and precise execution to build inevitable brands." />
-  <link rel="canonical" href="https://<your-username>.github.io/signatured-site/" />
-
-  <!-- Icons -->
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Social cards -->
-  <meta property="og:title" content="Signature D — We don’t chase attention — we own it." />
-  <meta property="og:description" content="Strategy. Cinematic design. Precise execution. Outcomes that feel inevitable." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://<your-username>.github.io/signatured-site/images/og-cover.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Theme -->
-  <meta name="theme-color" content="#0a0d10" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-
-  <!-- Robots -->
-  <meta name="robots" content="index,follow" />
-
+  <title>Signature D. — Play the World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0a0d10;         /* deep ink */
-      --panel:#0f141a;
-      --text:#e6eaef;       /* ice */
-      --muted:#a8b0bb;      /* slate */
-      --line:rgba(230,234,239,.12);
-      --gold:#f5c046;
-      --accent:#0e3f3f;     /* teal-ink */
-      --radius:18px;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --emerald:#0f3d3e; /* deep emerald */
+      --emerald-2:#0b2f30; /* darker */
+      --silver:#e6eaef; /* soft silver */
+      --ink:#0a0f12; /* rich black */
+      --accent:#9fb7b9; /* muted chrome */
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background:var(--bg); color:var(--text);}
-    img{max-width:100%; height:auto; display:block}
-    a{color:inherit}
-    .container{width:min(1100px, 92%); margin-inline:auto}
-    .visually-hidden{position:absolute!important;clip:rect(1px,1px,1px,1px);padding:0;border:0;height:1px;width:1px;overflow:hidden;white-space:nowrap}
+    html,body{margin:0;padding:0;background:var(--ink);color:var(--silver);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    a{color:var(--silver);text-decoration:none}
+    .container{max-width:1080px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);background:rgba(10,15,18,.6);border-bottom:1px solid rgba(230,234,239,.08);z-index:50}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--emerald),var(--emerald-2));box-shadow:0 0 0 1px rgba(230,234,239,.08),0 12px 30px rgba(9, 40, 43, .45)}
+    .brand h1{font-family:"Playfair Display",serif;letter-spacing:.5px;font-weight:700;font-size:22px;margin:0}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{opacity:.9}
+    .cta{display:inline-block;padding:12px 18px;border:1px solid rgba(230,234,239,.22);border-radius:999px}
+    .btn{display:inline-block;padding:12px 20px;border-radius:14px;background:linear-gradient(135deg,var(--emerald),#145052);box-shadow:0 10px 24px rgba(13,52,54,.45);border:1px solid rgba(230,234,239,.12)}
+    .btn.silver{background:linear-gradient(135deg,#cfd7df,#aeb9c6);color:#0a0f12;box-shadow:0 10px 22px rgba(207,215,223,.25)}
+    .hero{padding:88px 24px 46px;background:radial-gradient(1200px 600px at 70% -10%, rgba(15,61,62,.55), transparent),radial-gradient(900px 500px at -10% 20%, rgba(20,80,82,.45), transparent)}
+    .hero h2{font-family:"Playfair Display",serif;font-weight:700;font-size:46px;margin:0 0 10px}
+    .hero p{max-width:760px;opacity:.92;line-height:1.65}
+    .hero .actions{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
 
-    /* Header */
-    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(120%) blur(8px); background:linear-gradient(180deg, rgba(10,13,16,.85), rgba(10,13,16,.55)); border-bottom:1px solid var(--line)}
-    .navwrap{display:flex;justify-content:space-between;align-items:center; padding:16px 0}
-    .brand{display:flex;align-items:center;gap:10px}
-    .brand h1{font-family:"Playfair Display", serif; font-size:22px; letter-spacing:.2px; margin:0}
-    nav a{margin:0 8px; text-decoration:none; color:var(--text); opacity:.9}
-    nav a:hover, nav a:focus{opacity:1}
+    .section{padding:50px 24px;border-top:1px solid rgba(230,234,239,.08)}
+    .kicker{letter-spacing:.2em;text-transform:uppercase;color:#bcd2d6;font-size:12px;margin-bottom:8px}
+    .section h3{font-family:"Playfair Display",serif;font-size:28px;margin:0 0 16px}
+    .grid{display:grid;gap:16px}
+    @media(min-width:880px){.grid.cols-2{grid-template-columns:1fr 1fr}.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-4{grid-template-columns:repeat(4,1fr)}}
 
-    /* Mobile nav */
-    .menu-btn{display:none; border:1px solid var(--line); background:transparent; color:var(--text); padding:8px 12px; border-radius:12px}
-    @media (max-width:860px){
-      nav{display:none}
-      .menu-btn{display:inline-flex}
-      .nav-drawer{display:none; position:absolute; left:0; right:0; top:64px; background:var(--panel); border-bottom:1px solid var(--line)}
-      .nav-drawer a{display:block; padding:14px 4%; border-top:1px solid var(--line)}
-      .nav-drawer.open{display:block}
-    }
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00));border:1px solid rgba(230,234,239,.08);border-radius:18px;padding:20px}
+    .card h4{margin:0 0 8px;font-size:20px;font-family:"Playfair Display",serif}
+    .muted{opacity:.8}
+    ul{margin:12px 0 0 18px}
+    li{margin:6px 0}
 
-    /* Buttons */
-    .btn{display:inline-block; padding:12px 18px; border-radius:12px; background:var(--gold); color:#111; text-decoration:none; font-weight:700; box-shadow:var(--shadow);}
-    .btn:hover{transform:translateY(-1px)}
-    .btn.ghost{background:transparent; color:var(--text); border:1px solid var(--line); box-shadow:none}
+    .price{margin-top:10px;font-weight:600;color:#dfe6ec}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(230,234,239,.06);border:1px solid rgba(230,234,239,.08);font-size:12px;margin-left:6px}
 
-    /* Hero */
-    .hero{padding:80px 0 36px; text-align:center}
-    .hero h2{font-family:"Playfair Display", serif; font-weight:700; font-size:42px; margin:6px 0 10px}
-    .hero p{color:var(--muted); font-size:18px; margin:0 auto 22px; max-width:780px}
-    .cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+    .gallery{display:grid;gap:10px;grid-template-columns:repeat(3,1fr)}
+    .shot{aspect-ratio:16/10;border-radius:14px;background:linear-gradient(135deg,rgba(207,215,223,.14),rgba(230,234,239,.03));border:1px solid rgba(230,234,239,.08);display:flex;align-items:center;justify-content:center;color:#9fb7b9;font-size:14px}
 
-  <main id="main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <p class="fine" aria-label="tagline">Digital Media & Production Agency</p>
-        <h2>We don’t chase attention — we own it.</h2>
-        </div>
-      </div>
-    </section>
+    .testimonial{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00));border:1px solid rgba(230,234,239,.08);border-radius:16px;padding:18px}
+    .quote{font-family:"Playfair Display",serif;font-size:18px}
 
-
-    
-    /* Sections */
-    section{padding:56px 0}
-    section h3{font-family:"Playfair Display", serif; font-size:28px; margin:0 0 10px}
-    .lead{color:var(--muted); max-width:900px}
-
-    /* Cards / packages */
-    .grid{display:grid; gap:16px}
-    @media (min-width:740px){.grid.cols-3{grid-template-columns:repeat(3, 1fr)}}
-    .card{border:1px solid var(--line); border-radius:var(--radius); padding:22px; background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00)); box-shadow:var(--shadow)}
-    .card h4{margin:0 0 8px; font-size:18px}
-    .fine{color:var(--muted); font-size:14px}
-
-    /* Media */
-    .media{border:1px solid var(--line); border-radius:16px; overflow:hidden}
-
-    /* Partners */
-    .logos{display:flex; gap:24px; flex-wrap:wrap; align-items:center; opacity:.9}
-
-    /* Footer */
-    footer{padding:24px 0; border-top:1px solid var(--line)}
-    .foot{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px}
-
-    /* Focus ring */
-    :focus-visible{outline:2px solid var(--gold); outline-offset:2px}
+    footer{padding:40px 24px;border-top:1px solid rgba(230,234,239,.08);opacity:.8}
   </style>
 </head>
 <body>
-  <a class="visually-hidden" href="#main">Skip to content</a>
-
-  <!-- HEADER -->
   <header>
-    <div class="container navwrap">
-      <div class="brand" aria-label="Signature D brand">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" opacity=".25"/><path d="M6 13c4 2 8-7 12-5" stroke="currentColor"/></svg>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
         <h1>Signature D.</h1>
       </div>
-      <nav aria-label="Primary">
-        <a href="#method">Method</a>
+      <nav>
         <a href="#packages">Packages</a>
-        <a href="#clubs">Clubs</a>
-        <a href="private-club.html">Client Club</a>
-        <a href="influencer-club.html">Influencer Club</a>
-        <a href="after-dark.html">After‑Dark</a>
-        <a href="#partners">Partners</a>
-        <a href="#contact">Start</a>
+        <a href="#work">Style</a>
+        <a href="#testimonials">Notes</a>
+        <a class="cta" href="#contact">Book 10‑min Call</a>
       </nav>
-      <button class="menu-btn" aria-expanded="false" aria-controls="mobileNav">Menu</button>
-    </div>
-    <div id="mobileNav" class="nav-drawer" aria-label="Mobile Navigation">
-      <div class="container">
-        <a href="#method">Method</a>
-        <a href="#packages">Packages</a>
-        <a href="#clubs">Clubs</a>
-        <a href="private-club.html">Client Club</a>
-        <a href="influencer-club.html">Influencer Club</a>
-        <a href="after-dark.html">After‑Dark</a>
-        <a href="#partners">Partners</a>
-        <a href="#contact">Start</a>
-      </div>
     </div>
   </header>
 
-  <main id="main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <p class="fine" aria-label="tagline">Digital Media & Production Agency</p>
-        <h2>We don’t chase attention — we own it.</h2>
-        <p>Strategy. Cinematic design. Precise execution. Outcomes that feel natural and inevitable.</p>
-        <div class="cta-row">
-          <!-- Replace YOURCASH with your Cash App cashtag; `1` adds $1 prefill -->
-          <a class="btn" href="https://cash.app/$YOURCASH/1" target="_blank" rel="noopener noreferrer">$1 Mini Audit</a>
-          <a class="btn ghost" href="#packages">See Packages</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- METHOD -->
-    <section id="method">
-      <div class="container">
-        <h3>Our Method — The Cohesive Cycle</h3>
-        <p class="lead">Audits spark packages. Packages unlock access. Access attracts anchors and influencers. Anchors create gravity. Together, the cycle makes your brand inevitable.</p>
-        <figure class="media" aria-labelledby="cycle-caption">
-          <picture>
-            <source srcset="images/signature-cycle@2x.png 2x, images/signature-cycle.png 1x" type="image/png">
-            <img src="images/signature-cycle.png" alt="Diagram of Signature D cohesive cycle from audit to anchors to gravity" width="1200" height="600" loading="lazy">
-          </picture>
-          <figcaption id="cycle-caption" class="visually-hidden">Visual explanation of the cycle</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- PACKAGES -->
-    <section id="packages">
-      <div class="container">
-        <h3>Packages</h3>
-        <div class="grid cols-3">
-          <article class="card">
-            <h4>Visibility — $2,500</h4>
-            <p>Launch cinematic presence and foundational assets. <span class="fine">Access membership optional (+$240/mo).</span></p>
-          </article>
-          <article class="card">
-            <h4>Engagement Accelerator — $5,000–$7,500</h4>
-            <p>Deep content engine, conversion journeys. <span class="fine">Includes access membership ($240/mo).</span></p>
-          </article>
-          <article class="card">
-            <h4>Conversion Builder — $10,000+</h4>
-            <p>Full-funnel builds, paid strategy, analytics. <span class="fine">Includes access membership ($240/mo).</span></p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CLUBS -->
-    <section id="clubs">
-      <div class="container">
-        <h3>Private Clubs</h3>
-        <div class="grid cols-3">
-          <article class="card">
-            <h4>Private Client Club</h4>
-            <p class="fine">$240/month • invite‑only</p>
-            <a class="btn" href="private-club.html">Request Invitation</a>
-          </article>
-          <article class="card">
-            <h4>Influencer Access Club</h4>
-            <p class="fine">$500–$2,000/month • approval required</p>
-            <a class="btn" href="influencer-club.html">Apply</a>
-          </article>
-          <article class="card">
-            <h4>After‑Dark Lounge</h4>
-            <p class="fine">Members‑only chat</p>
-            <a class="btn" href="after-dark.html">Enter Lounge</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PARTNERS -->
-    <section id="partners">
-      <div class="container">
-        <h3>Founding Partners</h3>
-        <p class="lead">Early anchor brands helping shape the Signature D network in Orlando.</p>
-        <div class="logos" aria-label="Partner logos">
-          <!-- Example placeholders; replace src with real partner marks -->
-          <img src="images/partner-1.png" alt="Partner 1 logo" width="120" height="40" loading="lazy">
-          <img src="images/partner-2.png" alt="Partner 2 logo" width="120" height="40" loading="lazy">
-          <img src="images/partner-3.png" alt="Partner 3 logo" width="120" height="40" loading="lazy">
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT / START -->
-    <section id="contact">
-      <div class="container">
-        <h3>Start in 60 seconds</h3>
-        <div class="grid">
-          <article class="card">
-            <h4>$1 Mini Audit</h4>
-            <p class="fine">Instant audit kickoff — add notes in the payment memo.</p>
-            <a class="btn" href="https://cash.app/$YOURCASH/1" target="_blank" rel="noopener noreferrer">Pay $1 via Cash App</a>
-          </article>
-          <article class="card">
-            <h4>Join the List</h4>
-            <!-- Replace the iframe src with your email form provider (Mailchimp/ConvertKit/etc.) -->
-            <iframe title="Email signup" src="about:blank" width="100%" height="420" loading="lazy" style="border:1px solid var(--line); border-radius:12px; background:#0c1116"></iframe>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container foot">
-      <div>© <span id="yr"></span> DeVirn Signature House, Inc.</div>
-      <div class="fine" style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="private-club.html">Client Club</a>
-        <a href="influencer-club.html">Influencer Club</a>
-        <a href="after-dark.html">After‑Dark</a>
-        <span aria-hidden="true">·</span>
-        <span>We don’t chase attention — we own it.</span>
+  <section class="hero">
+    <div class="container">
+      <div class="kicker">Digital Media & Production Agency</div>
+      <h2>Signature Service. Signature Style.<br/> <span style="color:#cfd7df">Play the World.</span></h2>
+      <p>
+        We craft cinematic visuals, conversion‑ready pages, and luxury brand systems for founders who move like moguls.
+        Based on precision, restraint and power — not noise.
+      </p>
+      <div class="actions">
+        <a class="btn" href="mailto:narinedevirn@gmail.com?subject=$1%20Mini%20Audit%20Request&body=Hi%20DeVirn%2C%20I'd%20like%20the%20$1%20Mini%20Audit.%20Brand%20name%3A%20___%20Website%2FInstagram%3A%20___">Request $1 Mini Audit</a>
+        <a class="btn silver" href="#contact">Book 10‑min Call</a>
       </div>
     </div>
+  </section>
+
+  <section id="packages" class="section">
+    <div class="container">
+      <div class="kicker">Packages</div>
+      <h3>Choose your pace. We’ll match your ambition.</h3>
+
+      <div class="grid cols-2" style="margin-top:16px">
+        <div class="card">
+          <h4>Visibility Package <span class="pill">~2 weeks</span></h4>
+          <div class="muted">Own the first impression.</div>
+          <ul>
+            <li>15‑sec cinematic hero reel (concept → shoot → edit)</li>
+            <li>5 branded social posts (Signature D design)</li>
+            <li>Profile/website banner refresh + highlights</li>
+            <li>1:1 brand session (audit + positioning)</li>
+          </ul>
+          <div class="price">Starting at $2,500</div>
+        </div>
+
+        <div class="card">
+          <h4>Engagement Accelerator <span class="pill">3–4 weeks</span></h4>
+          <div class="muted">Turn attention into interaction.</div>
+          <ul>
+            <li>30‑day content calendar (captions + CTAs)</li>
+            <li>10 cinematic post designs</li>
+            <li>3 short‑form videos (Reels/TikTok/LinkedIn)</li>
+            <li>Auto‑DM & booking setup + engagement report</li>
+          </ul>
+          <div class="price">$5,000 – $7,500</div>
+        </div>
+
+        <div class="card">
+          <h4>Conversion Builder <span class="pill">4–6 weeks</span></h4>
+          <div class="muted">From browsers to booked calls.</div>
+          <ul>
+            <li>Luxury landing page or site optimization (speed + clarity + CTA)</li>
+            <li>Booking automation (Calendly/Acuity + reminders)</li>
+            <li>3 testimonial reels (story edits)</li>
+            <li>Ad creative bundle (5 static + 2 video for retargeting)</li>
+          </ul>
+          <div class="price">Starting at $10,000</div>
+        </div>
+
+        <div class="card">
+          <h4>Empire Package <span class="pill">8–12 weeks</span></h4>
+          <div class="muted">Scale your vision. Play the world.</div>
+          <ul>
+            <li>Full brand identity (logo suite, typography, palette)</li>
+            <li>Cinematic reel library (5–10 brand films)</li>
+            <li>Website or funnel build (luxury, mobile‑first, conversion‑ready)</li>
+            <li>Retargeting ad campaign setup + creative</li>
+            <li>90‑day growth blueprint + priority support</li>
+          </ul>
+          <div class="price">$20,000 – $25,000</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <strong>Add‑ons:</strong> Additional cinematic reels ($1,500 each) • Social media management (from $3,000/mo) • Product photography (per collection, custom quote) • Event/Expo coverage (custom quote)
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="section">
+    <div class="container">
+      <div class="kicker">Selected Style References</div>
+      <h3>Minimal. Cinematic. Billionaire energy.</h3>
+      <div class="gallery" style="margin-top:14px">
+        <div class="shot">Cinematic Card / Emerald & Silver</div>
+        <div class="shot">Skyline / Miami 90s Neon</div>
+        <div class="shot">Parking Garage / Night Luxury</div>
+      </div>
+      <p class="muted" style="margin-top:10px">Replace these with your latest visuals or attach samples in email.
+      </p>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section">
+    <div class="container">
+      <div class="kicker">Notes</div>
+      <h3>What partners say</h3>
+      <div class="grid cols-3" style="margin-top:12px">
+        <div class="testimonial"><div class="quote">“A precise eye for luxury. Our bookings lifted within weeks.”</div><div class="muted">— Partner, Boutique Hospitality</div></div>
+        <div class="testimonial"><div class="quote">“Clean, cinematic, on‑brand. The reel system keeps paying for itself.”</div><div class="muted">— Founder, Beauty & Wellness</div></div>
+        <div class="testimonial"><div class="quote">“They built the funnel and the retargeting. We finally look like who we are.”</div><div class="muted">— CEO, Consulting Firm</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="kicker">Start</div>
+      <h3>Two fast ways to begin</h3>
+      <div class="grid cols-2" style="margin-top:12px">
+        <div class="card">
+          <h4>$1 Mini Audit</h4>
+          <p class="muted">One page. Three fixes. Delivered in 24 hours.</p>
+          <a class="btn" href="mailto:narinedevirn@gmail.com?subject=$1%20Mini%20Audit%20Request&body=Brand%20name%3A%20___%0AWebsite%2FInstagram%3A%20___">Request by Email</a>
+        </div>
+        <div class="card">
+          <h4>10‑Minute Call</h4>
+          <p class="muted">No slides. One idea you can ship in 48 hours.</p>
+          <a class="btn silver" href="#">Book a Time</a>
+          <p class="muted" style="margin-top:8px">(Drop in your Calendly link.)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <div>© <span id="yr"></span> DeVirn Signature House, Inc.</div>
+      <div class="muted">Bespoke creative for brands that move like moguls.</div>
+    </div>
   </footer>
-
-  <script>
-    // Year stamp
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-    // Mobile nav toggle
-    const btn = document.querySelector('.menu-btn');
-    const drawer = document.getElementById('mobileNav');
-    btn?.addEventListener('click', () => {
-      const open = drawer.classList.toggle('open');
-      btn.setAttribute('aria-expanded', String(open));
-    });
-  </script>
-
-  <!-- Optional: JSON-LD Organization snippet -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Signature D",
-    "url": "https://<your-username>.github.io/signatured-site/",
-    "logo": "https://<your-username>.github.io/signatured-site/images/og-cover.jpg"
-  }
-  </script>
+  <script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
 </body>
 </html>
